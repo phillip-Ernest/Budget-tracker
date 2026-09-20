@@ -1,0 +1,36 @@
+/* Element selector */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+/* ID selector */
+#main-heading {
+    text-align: center;
+    padding: 20px;
+    background-color: #d9ead3;
+}
+
+/* Class selector */
+.add-expense {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #d9eaf7;
+}
+
+/* Class selector */
+.expenses {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fce5cd;
+}
+
+/* Styling the input elements */
+input {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 8px;
+    width: 250px;
+}
