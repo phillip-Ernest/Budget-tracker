@@ -1,176 +1,163 @@
-<!DOCTYPE html>
+/* General page styling */
+* {
+    box-sizing: border-box;
+}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Budget Tracker</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #333;
+}
 
-<body>
+/* Header */
+header {
+    text-align: center;
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px 20px;
+}
 
-```
-<header>
-    <!-- Small logo/icon near the main heading -->
-    <img
-        src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png"
-        alt="Budget tracker icon"
-        width="80"
-    >
+header img {
+    display: block;
+    margin: 0 auto 10px;
+}
 
-    <h1>My Budget Tracker</h1>
-    <p>Track your income and expenses in one place.</p>
-</header>
+header h1 {
+    margin: 10px 0;
+}
 
-<main>
+header p {
+    margin: 0;
+}
 
-    <!-- Add Expense Form -->
-    <section class="add-expense-section">
-        <h2>Add Expense</h2>
+/* Main content */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
 
-        <form>
-            <div class="form-group">
-                <label for="expense-name">Expense Name:</label>
-                <input
-                    type="text"
-                    id="expense-name"
-                    name="expense-name"
-                    placeholder="Enter expense name"
-                >
-            </div>
+/* Sections */
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
 
-            <div class="form-group">
-                <label for="expense-amount">Amount (KSh):</label>
-                <input
-                    type="number"
-                    id="expense-amount"
-                    name="expense-amount"
-                    placeholder="Enter amount"
-                >
-            </div>
+/* Form */
+.form-group {
+    margin-bottom: 18px;
+}
 
-            <div class="form-group">
-                <label for="expense-category">Category:</label>
-                <select id="expense-category" name="expense-category">
-                    <option value="">-- Select Category --</option>
-                    <option value="food">Food</option>
-                    <option value="transport">Transport</option>
-                    <option value="rent">Rent</option>
-                    <option value="entertainment">Entertainment</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
 
-            <div class="form-group">
-                <label for="expense-date">Date:</label>
-                <input
-                    type="date"
-                    id="expense-date"
-                    name="expense-date"
-                >
-            </div>
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
 
-            <button type="button">Add Expense</button>
-        </form>
-    </section>
+/* Input focus state */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+}
 
+/* Negation selector */
+input:not([type="submit"]) {
+    background-color: #fafafa;
+}
 
-    <!-- Expenses Section -->
-    <section class="expenses-section">
-        <h2>Your Expenses</h2>
+/* Button */
+button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Amount</th>
-                    <th>Category</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
+button:hover {
+    opacity: 0.85;
+}
 
-            <tbody>
-                <tr>
-                    <td>Lunch</td>
-                    <td>KSh 500</td>
-                    <td>Food</td>
-                    <td>2026-09-20</td>
-                </tr>
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
-                <tr>
-                    <td>Bus Fare</td>
-                    <td>KSh 200</td>
-                    <td>Transport</td>
-                    <td>2026-09-19</td>
-                </tr>
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
 
-                <tr>
-                    <td>House Rent</td>
-                    <td>KSh 15,000</td>
-                    <td>Rent</td>
-                    <td>2026-09-18</td>
-                </tr>
+/* Table header */
+th {
+    background-color: #34495e;
+    color: white;
+}
 
-                <tr>
-                    <td>Movie Ticket</td>
-                    <td>KSh 800</td>
-                    <td>Entertainment</td>
-                    <td>2026-09-17</td>
-                </tr>
+/* Alternating table rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 
-                <tr>
-                    <td>Notebook</td>
-                    <td>KSh 150</td>
-                    <td>Other</td>
-                    <td>2026-09-16</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+/* Table row hover */
+tbody tr:hover {
+    background-color: #dfefff;
+}
 
+/* Descendant selector */
+.expenses-section td {
+    font-size: 15px;
+}
 
-    <!-- How to Use Section -->
-    <section class="instructions-section">
+/* Direct child selector */
+.add-expense-section > h2 {
+    color: #2c3e50;
+}
 
-        <details>
-            <summary>How to use this tracker</summary>
+/* Details section */
+details {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
 
-            <p>
-                Enter the name of your expense, the amount you spent,
-                select a category, and choose the date. Then click the
-                "Add Expense" button. The button will become functional
-                when JavaScript is added in a later week.
-            </p>
-        </details>
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
 
-    </section>
+/* Multimedia */
+.multimedia-section {
+    text-align: center;
+}
 
+.multimedia-section iframe {
+    max-width: 100%;
+}
 
-    <!-- Multimedia Section -->
-    <section class="multimedia-section">
-
-        <h2>Learn About Budgeting</h2>
-
-        <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/HQzoZfc3GwQ"
-            title="Budgeting tips video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-
-    </section>
-
-</main>
-
-
-<footer>
-    <p>&copy; 2026 My Budget Tracker</p>
-</footer>
-```
-
-</body>
-</html>
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+}
