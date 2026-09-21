@@ -1,163 +1,421 @@
-/* General page styling */
-* {
-    box-sizing: border-box;
+/* =========================================
+MY BUDGET TRACKER - WEEK 3 CSS
+Visual Design Challenge
+========================================= */
+
+/* =========================================
+
+1. GOOGLE FONTS
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap');
+
+/* =========================================
+2. COLOR PALETTE
+========================================= */
+
+:root {
+--primary-color: #1f4e5f;
+--secondary-color: #4f9da6;
+--background-color: #f3f7f8;
+--card-color: #ffffff;
+--text-color: #263238;
+--muted-text: #607d8b;
+--border-color: #d5e0e4;
+--table-row-color: #eef5f6;
+--button-hover: #163b49;
 }
+
+/* =========================================
+3. BASIC RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+/* =========================================
+4. PAGE
+========================================= */
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f6f8;
-    color: #333;
+background-color: var(--background-color);
+color: var(--text-color);
+
+```
+font-family: "Open Sans", sans-serif;
+font-size: 16px;
+line-height: 1.6;
+```
+
 }
 
-/* Header */
+/* =========================================
+5. PAGE HEADING CARD
+========================================= */
+
 header {
-    text-align: center;
-    background-color: #2c3e50;
-    color: white;
-    padding: 30px 20px;
-}
+width: 90%;
+max-width: 1000px;
 
-header img {
-    display: block;
-    margin: 0 auto 10px;
+```
+margin: 30px auto 25px;
+padding: 35px 25px;
+
+background-color: var(--primary-color);
+color: white;
+
+border: 2px solid var(--secondary-color);
+border-radius: 12px;
+
+text-align: center;
+```
+
 }
 
 header h1 {
-    margin: 10px 0;
+font-family: "Poppins", sans-serif;
+font-size: 2.3rem;
+font-weight: 700;
+
+```
+margin-bottom: 8px;
+```
+
 }
 
 header p {
-    margin: 0;
+font-family: "Open Sans", sans-serif;
+font-size: 1rem;
 }
 
-/* Main content */
+/* =========================================
+6. MAIN CONTENT
+========================================= */
+
 main {
-    width: 90%;
-    max-width: 1000px;
-    margin: 30px auto;
+width: 90%;
+max-width: 1000px;
+
+```
+margin: 0 auto;
+```
+
 }
 
-/* Sections */
-section {
-    background-color: white;
-    padding: 25px;
-    margin-bottom: 30px;
-    border-radius: 8px;
+/* =========================================
+7. ADD EXPENSE CARD
+========================================= */
+
+.add-expense-section {
+background-color: var(--card-color);
+
+```
+margin-bottom: 25px;
+padding: 30px;
+
+border: 1px solid var(--border-color);
+border-radius: 12px;
+
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+```
+
 }
 
-/* Form */
+.add-expense-section > h2 {
+color: var(--primary-color);
+
+```
+font-family: "Poppins", sans-serif;
+font-size: 1.6rem;
+font-weight: 600;
+
+margin-bottom: 20px;
+```
+
+}
+
+/* =========================================
+8. FORM
+========================================= */
+
+form {
+display: grid;
+gap: 18px;
+}
+
 .form-group {
-    margin-bottom: 18px;
+display: flex;
+flex-direction: column;
 }
 
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 6px;
+.form-group label {
+color: var(--text-color);
+
+```
+font-family: "Open Sans", sans-serif;
+font-weight: 600;
+
+margin-bottom: 6px;
+```
+
 }
 
-input,
-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+.form-group input,
+.form-group select {
+width: 100%;
+
+```
+padding: 12px 14px;
+
+background-color: #ffffff;
+color: var(--text-color);
+
+border: 1px solid var(--border-color);
+border-radius: 8px;
+
+font-family: "Open Sans", sans-serif;
+font-size: 0.95rem;
+```
+
 }
 
-/* Input focus state */
-input:focus,
-select:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+.form-group input:focus,
+.form-group select:focus {
+outline: none;
+
+```
+border-color: var(--secondary-color);
+
+box-shadow: 0 0 0 3px rgba(79, 157, 166, 0.15);
+```
+
 }
 
-/* Negation selector */
-input:not([type="submit"]) {
-    background-color: #fafafa;
+/* =========================================
+9. BUTTON
+========================================= */
+
+button,
+input[type="submit"] {
+width: 100%;
+
+```
+margin-top: 5px;
+padding: 12px 20px;
+
+background-color: var(--primary-color);
+color: white;
+
+border: none;
+border-radius: 8px;
+
+font-family: "Open Sans", sans-serif;
+font-size: 1rem;
+font-weight: 600;
+
+cursor: pointer;
+```
+
 }
 
-/* Button */
-button {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+button:hover,
+input[type="submit"]:hover {
+background-color: var(--button-hover);
 }
 
-button:hover {
-    opacity: 0.85;
+/* =========================================
+10. EXPENSE TABLE CARD
+========================================= */
+
+.expenses-section {
+background-color: var(--card-color);
+
+```
+margin-bottom: 30px;
+padding: 30px;
+
+border: 1px solid var(--border-color);
+border-radius: 12px;
+
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+```
+
 }
 
-/* Table */
+.expenses-section h2 {
+color: var(--primary-color);
+
+```
+font-family: "Poppins", sans-serif;
+font-size: 1.6rem;
+font-weight: 600;
+
+margin-bottom: 20px;
+```
+
+}
+
+/* =========================================
+11. EXPENSE TABLE
+========================================= */
+
 table {
-    width: 100%;
-    border-collapse: collapse;
+width: 100%;
+
+```
+border-collapse: collapse;
+
+background-color: white;
+
+border: 1px solid var(--border-color);
+```
+
 }
 
 th,
 td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
+padding: 14px 16px;
+
+```
+border: 1px solid var(--border-color);
+
+text-align: left;
+
+font-family: "Open Sans", sans-serif;
+```
+
 }
 
-/* Table header */
 th {
-    background-color: #34495e;
-    color: white;
+background-color: var(--primary-color);
+color: white;
+
+```
+font-family: "Poppins", sans-serif;
+font-weight: 600;
+```
+
 }
 
-/* Alternating table rows */
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+/* Alternating rows */
+
+tbody tr:nth-child(even) {
+background-color: var(--table-row-color);
 }
 
-/* Table row hover */
+tbody tr:nth-child(odd) {
+background-color: white;
+}
+
+/* Table hover */
+
 tbody tr:hover {
-    background-color: #dfefff;
+background-color: #dfeff1;
 }
 
-/* Descendant selector */
-.expenses-section td {
-    font-size: 15px;
-}
+/* =========================================
+12. DETAILS SECTION
+========================================= */
 
-/* Direct child selector */
-.add-expense-section > h2 {
-    color: #2c3e50;
-}
-
-/* Details section */
 details {
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
+margin-top: 20px;
+padding: 15px;
+
+```
+background-color: #f8f9fa;
+
+border: 1px solid var(--border-color);
+border-radius: 8px;
+```
+
 }
 
 summary {
-    font-weight: bold;
-    cursor: pointer;
+color: var(--primary-color);
+
+```
+font-family: "Poppins", sans-serif;
+font-weight: 600;
+
+cursor: pointer;
+```
+
 }
 
-/* Multimedia */
+/* =========================================
+13. MULTIMEDIA
+========================================= */
+
 .multimedia-section {
-    text-align: center;
+margin-top: 25px;
+padding: 25px;
+
+```
+background-color: var(--card-color);
+
+border: 1px solid var(--border-color);
+border-radius: 12px;
+
+text-align: center;
+```
+
 }
 
 .multimedia-section iframe {
-    max-width: 100%;
+max-width: 100%;
+border-radius: 8px;
 }
 
-/* Footer */
+/* =========================================
+14. FOOTER
+========================================= */
+
 footer {
-    text-align: center;
+margin-top: 30px;
+padding: 20px;
+
+```
+background-color: var(--primary-color);
+color: white;
+
+text-align: center;
+```
+
+}
+
+/* =========================================
+15. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 600px) {
+
+```
+header,
+main {
+    width: 94%;
+}
+
+header {
+    padding: 25px 18px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+.add-expense-section,
+.expenses-section {
     padding: 20px;
-    background-color: #2c3e50;
-    color: white;
+}
+
+th,
+td {
+    padding: 10px;
+    font-size: 0.85rem;
+}
+```
+
 }
